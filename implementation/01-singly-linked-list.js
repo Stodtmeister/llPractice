@@ -21,14 +21,11 @@ class SinglyLinkedList {
     }
 
     addToTail(val) {
-        // There are bugs in this method! Fix them!!!
-
-        // Add node of val to tail of linked list
         let newNode = new SinglyLinkedNode(val);
 
         if (!this.head) {
             this.head = newNode;
-        }else {
+        } else {
             let curr = this.head;
             while (curr.next) {
                 curr = curr.next;
@@ -37,15 +34,14 @@ class SinglyLinkedList {
         }
         this.length++
         return this
-        // Write your hypothesis on the time complexity of this method here
     }
 
     removeFromHead() {
-        // Remove node at head
-
-        // Your code here
-
-        // Write your hypothesis on the time complexity of this method here
+        if (!this.head) return undefined
+        let removed = this.head
+        this.head = this.head.next
+        this.length--
+        return removed
     }
 
     removeFromTail() {
