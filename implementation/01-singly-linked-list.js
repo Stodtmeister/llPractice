@@ -32,13 +32,18 @@ class SinglyLinkedList {
             }
             current.next = newNode
         }
-        
+
         this.length++
         return this
     }
 
     removeFromHead() {
-
+        if (!this.head) return undefined
+        
+        let saved = this.head
+        this.head = this.head.next
+        this.length--
+        return saved
     }
 
     removeFromTail() {
