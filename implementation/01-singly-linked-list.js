@@ -26,12 +26,15 @@ class SinglyLinkedList {
         if (!this.head) {
             this.head = newNode
         } else {
-            newNode.prev = this.tail
-            this.tail.next = newNode
+            let current = this.head
+            while (current.next) {
+                current = current.next
+            }
+            current.next = newNode
         }
-
-        this.tail = newNode
+        
         this.length++
+        return this
     }
 
     removeFromHead() {
