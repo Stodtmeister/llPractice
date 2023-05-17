@@ -39,7 +39,7 @@ class SinglyLinkedList {
 
     removeFromHead() {
         if (!this.head) return undefined
-        
+
         let saved = this.head
         this.head = this.head.next
         this.length--
@@ -47,7 +47,24 @@ class SinglyLinkedList {
     }
 
     removeFromTail() {
+        if (!this.head) {
+            return undefined
+        } else {
+            let current = this.head
+            let prev;
+            while (current.next) {
+                prev = current
+                current = current.next
+            }
 
+            if (!this.head.next) {
+                this.head = null
+            } else {
+                prev.next = null
+            }
+            this.length--
+            return current
+        }
     }
 
     peekAtHead() {
