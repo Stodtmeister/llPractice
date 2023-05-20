@@ -13,9 +13,9 @@ class SinglyLinkedList {
     }
 
     addToHead(val) {
-        const node = new SinglyLinkedNode(val)
-        node.next = this.head
-        this.head = node
+        const newNode = new SinglyLinkedNode(val)
+        newNode.next = this.head
+        this.head = newNode
         this.length++
         return this
     }
