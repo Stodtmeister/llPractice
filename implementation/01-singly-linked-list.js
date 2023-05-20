@@ -13,12 +13,13 @@ class SinglyLinkedList {
     }
 
     addToHead(val) {
-        const newNode = new SinglyLinkedNode(val)
-        newNode.next = this.head
-        this.head = newNode
+        const node = new SinglyLinkedNode(val)
+        node.next = this.head
+        this.head = node
         this.length++
         return this
     }
+
 
     addToTail(val) {
         const newNode = new SinglyLinkedNode(val)
